@@ -185,5 +185,17 @@ createApp({
     activeItem() {
       return this.contacts[this.activeIndex];
     },
+    // filteredSentItems() {
+    //   // Filter the itemList based on some condition
+    //   return this.contacts[this.activeIndex].messages.filter(
+    //     (item) => item.status === "sent"
+    //   );
+    // },
+    // filteredReceivedItems() {
+    //   // Filter the itemList based on some condition
+    //   return this.contacts[this.activeIndex].messages.filter(
+    //     (item) => item.status === "received"
+    //   );
+    // },
   },
 }).mount("#app");

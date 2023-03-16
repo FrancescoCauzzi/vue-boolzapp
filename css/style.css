@@ -6,6 +6,7 @@
 
 .__icon {
   cursor: pointer;
+  color: grey;
 }
 
 /* body {
@@ -103,4 +104,69 @@
 
 .__active {
   background-color: #e9ebee;
+}
+
+.active-item {
+  height: 100%;
+}
+
+.__last-access {
+  font-size: 0.7em;
+  color: grey;
+}
+
+/* stilizzo la chat */
+
+.__actual-chat {
+  background-image: url(../img/mine.jpg);
+  height: calc(100% - 80px);
+  overflow: auto;
+}
+
+/* .__send-msg {
+  width: 100%;
+}
+
+.__receive-msg {
+  width: 100%;
+} */
+
+/* .__msg-sent-displayer {
+  background-color: #8edafc;
+}
+
+.__msg-rc-displayer {
+  background-color: red;
+}
+
+.__msg-sent-displayer,
+.__msg-rc-displayer {
+  width: 42%;
+  border-radius: 15px;
+} */
+
+.__msg-holder {
+}
+
+.__msg-displayer {
+  background-color: red;
+  width: 40%;
+}
+
+.__sent {
+  display: flex;
+  justify-content: end;
+}
+
+.__received .__msg-displayer,
+.__sent .__msg-displayer {
+  border-radius: 15px;
+}
+
+.__received .__msg-displayer {
+  background-color: white;
+}
+
+.__sent .__msg-displayer {
+  background-color: #d5f9ba;
 }

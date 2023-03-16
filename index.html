@@ -123,9 +123,11 @@
                   <div class="__username fw-medium fs-5">
                     <span>{{activeItem.name}}</span>
                     <br>
-                    <span>Ultimo accesso il giorno {{activeItem.messages[activeItem.messages.length -
+                    <span class="__last-access">Ultimo accesso il giorno
+                      {{activeItem.messages[activeItem.messages.length -
                       1].date.slice(0,10)}}</span>
-                    <span> alle {{activeItem.messages[activeItem.messages.length - 1].date.slice(10,16)}}</span>
+                    <span class="__last-access"> alle {{activeItem.messages[activeItem.messages.length -
+                      1].date.slice(10,16)}}</span>
 
                   </div>
                 </div>
@@ -141,6 +143,23 @@
                   </div>
 
                 </div>
+              </div>
+              <div class="__actual-chat  p-4 d-flex flex-column gap-3">
+
+                <div v-for="(el,index) in contacts[activeIndex].messages" class="__msg-holder"
+                  :class="el.status === 'sent' ? '__sent' : '__received'">
+                  <div class="__msg-displayer p-3">
+                    {{el.message}}
+
+                  </div>
+
+
+                </div>
+
+
+
+
+
               </div>
             </div>
 
