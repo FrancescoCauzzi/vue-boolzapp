@@ -122,15 +122,19 @@
                   </div>
                   <div class="__username fw-medium fs-5">
                     <span>{{activeItem.name}}</span>
+                    <br>
+                    <span>Ultimo accesso il giorno {{activeItem.messages[activeItem.messages.length -
+                      1].date.slice(0,10)}}</span>
+                    <span> alle {{activeItem.messages[activeItem.messages.length - 1].date.slice(10,16)}}</span>
 
                   </div>
                 </div>
                 <div class="__user-funtionalities d-flex fs-5 align-items-center gap-3 ">
-                  <div class="__circle-icon __icon">
-                    <span><i class="fa-solid fa-spinner"></i></span>
+                  <div class="__lente-icon __icon">
+                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
                   </div>
-                  <div class="__msg-icon __icon">
-                    <span><i class="fa-solid fa-message"></i></span>
+                  <div class="__graffetta-icon __icon">
+                    <span><i class="fa-solid fa-paperclip"></i></span>
                   </div>
                   <div class="__3-dots-icon __icon">
                     <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
