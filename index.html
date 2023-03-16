@@ -30,7 +30,9 @@
       </header>
       <main>
         <div class="container d-flex  __container-inner">
+          <!-- lato sinistro finestra chat -->
           <div class="__user-and-contacts ">
+            <!-- utente corrente -->
             <div class="__user d-flex justify-content-between py-2 px-3">
               <div class="__user-info d-flex align-items-center gap-2">
                 <div class="__user-img">
@@ -55,9 +57,37 @@
 
               </div>
             </div>
+            <!-- ricevi notifiche e nuovi messaggi -->
+            <div class="__new-messages-and-alerts d-flex align-items-center gap-2 py-2 px-3 ">
+              <div class="__bell-icon bg-white fs-4 p-2 __icon">
+                <span><i class="fa-solid fa-bell-slash"></i></span>
+
+              </div>
+              <div class="__alert-text fw-medium">
+                <span>Ricevi notifiche di nuovi messaggi</span>
+                <br>
+                <a href="">Attiva notifiche desktop</a>
+
+              </div>
+
+
+            </div>
+            <!-- input cerca -->
+            <div class="input-group flex-nowrap p-2 __input-cerca">
+              <span class="input-group-text" id="addon-wrapping"><i
+                  class="fa-solid fa-magnifying-glass __icon"></i></span>
+              <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca"
+                aria-describedby="addon-wrapping">
+            </div>
+
 
 
           </div>
+
+
+
+
+          <!-- lato destro finestra chat -->
           <div class="__receiver-and-chat ">
 
           </div>

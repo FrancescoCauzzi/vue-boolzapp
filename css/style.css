@@ -55,3 +55,21 @@ main {
   width: 100%;
   object-fit: cover;
 }
+
+.__new-messages-and-alerts {
+  height: 90px;
+  background-color: #8edafc;
+}
+
+.__bell-icon {
+  color: #8edafc;
+  border-radius: 50%;
+}
+
+.__input-cerca {
+  background-color: #fafafa;
+}
+
+.input-group-text {
+  background-color: var(--bs-form-control-bg);
+}
