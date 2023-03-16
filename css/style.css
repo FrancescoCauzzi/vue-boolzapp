@@ -8,14 +8,19 @@
   cursor: pointer;
 }
 
+/* body {
+  height: 100vh;
+}
+
+#app {
+  height: 100%;
+} */
+
 .__container-outer {
   background-color: #26436f;
   height: 100vh;
   padding-top: 100px;
-}
-
-main {
-  height: 100%;
+  padding-bottom: 100px;
 }
 
 .container {
@@ -23,19 +28,19 @@ main {
 }
 
 .__container-inner {
-  height: 95%;
+  height: 100%;
   width: 100%;
-  background-color: aliceblue;
+
+  /* background-color: aliceblue; */
 }
 
 .__user-and-contacts {
   height: 100%;
-  background-color: red;
+  background-color: #ffffff;
   width: 30%;
 }
 
 .__receiver-and-chat {
-  height: 100%;
   background-color: blue;
   width: 70%;
 }
@@ -45,11 +50,13 @@ main {
   background-color: #eaeaea;
 }
 
-.__user-img {
+.__user-img,
+.__contact-image {
   height: 100%;
 }
 
-.__user-img img {
+.__user-img img,
+.__contact-image img {
   border-radius: 50%;
   height: 100%;
   width: 100%;
@@ -72,4 +79,27 @@ main {
 
 .input-group-text {
   background-color: var(--bs-form-control-bg);
+}
+
+/* gestisco lo stile dei contatti */
+.__contacts {
+  overflow: auto;
+  height: 400px;
+  background-color: white;
+}
+
+.__last-msg {
+  font-size: 0.8em;
+  color: grey;
+}
+
+.__contact {
+  border-top: 2px solid grey;
+  cursor: pointer;
+  height: 80px;
+  background-color: white;
+}
+
+.__active {
+  background-color: #e9ebee;
 }

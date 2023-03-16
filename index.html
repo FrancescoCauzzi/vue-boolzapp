@@ -79,6 +79,27 @@
               <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca"
                 aria-describedby="addon-wrapping">
             </div>
+            <!-- contacts -->
+            <div class="__contacts">
+              <div v-for="(contact, index) in contacts" class="__contact d-flex d-flex align-items-center gap-2 p-2"
+                :class="{ '__active': activeIndex === index }" @click="toggleClass(index)">
+                <div class="__contact-image">
+                  <img :src="contact.avatar" alt="">
+
+                </div>
+                <div class="__contact-name ">
+
+                  <span class="fw-medium fs-5"> {{contact.name}}</span>
+                  <br>
+                  <span class="fw-medium __last-msg ">Ultimo messaggio inviato</span>
+
+                </div>
+
+
+
+              </div>
+
+            </div>
 
 
 

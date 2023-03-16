@@ -9,11 +9,13 @@ createApp({
         name: "Sofia",
         avatar: "./img/avatar_io.jpg",
       },
+      activeIndex: null,
+
       contacts: [
         {
           name: "Michele",
           avatar: "./img/avatar_1.jpg",
-          visible: true,
+          activeIndex: null,
           messages: [
             {
               date: "10/01/2020 15:30:55",
@@ -173,5 +175,10 @@ createApp({
         },
       ],
     };
+  },
+  methods: {
+    toggleClass(index) {
+      this.activeIndex = index;
+    },
   },
 }).mount("#app");
