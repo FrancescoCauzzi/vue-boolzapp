@@ -9,7 +9,7 @@ createApp({
         name: "Sofia",
         avatar: "./img/avatar_io.jpg",
       },
-      activeIndex: null,
+      activeIndex: 0,
 
       contacts: [
         {
@@ -177,8 +177,13 @@ createApp({
     };
   },
   methods: {
-    toggleClass(index) {
-      this.activeIndex = index;
+    toggleClass(myIndex) {
+      this.activeIndex = myIndex;
+    },
+  },
+  computed: {
+    activeItem() {
+      return this.contacts[this.activeIndex];
     },
   },
 }).mount("#app");

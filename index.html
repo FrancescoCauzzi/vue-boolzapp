@@ -81,6 +81,7 @@
             </div>
             <!-- contacts -->
             <div class="__contacts">
+              <!-- assegno la classe '__active' in base ad una condizione, activeIndex è settato di default = null, successivamente al click ad activeIndex viene assegnato il valore di 'index' che esce dal v-for vueJS method  -->
               <div v-for="(contact, index) in contacts" class="__contact d-flex d-flex align-items-center gap-2 p-2"
                 :class="{ '__active': activeIndex === index }" @click="toggleClass(index)">
                 <div class="__contact-image">
@@ -110,6 +111,34 @@
 
           <!-- lato destro finestra chat -->
           <div class="__receiver-and-chat ">
+            <div class="active-item">
+              <div v-if="activeItem" :class="{ '__active': activeIndex === index }"
+                class="__active-item d-flex justify-content-between py-2 px-3">
+
+                <div class="__user-info d-flex align-items-center gap-2">
+                  <div class="__user-img">
+                    <img :src="activeItem.avatar" alt="user-image" srcset="">
+
+                  </div>
+                  <div class="__username fw-medium fs-5">
+                    <span>{{activeItem.name}}</span>
+
+                  </div>
+                </div>
+                <div class="__user-funtionalities d-flex fs-5 align-items-center gap-3 ">
+                  <div class="__circle-icon __icon">
+                    <span><i class="fa-solid fa-spinner"></i></span>
+                  </div>
+                  <div class="__msg-icon __icon">
+                    <span><i class="fa-solid fa-message"></i></span>
+                  </div>
+                  <div class="__3-dots-icon __icon">
+                    <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
 
           </div>
 

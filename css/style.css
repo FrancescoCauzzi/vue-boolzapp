@@ -45,7 +45,8 @@
   width: 70%;
 }
 
-.__user {
+.__user,
+.__active-item {
   height: 80px;
   background-color: #eaeaea;
 }
