@@ -16,6 +16,7 @@ createApp({
           name: "Michele",
           avatar: "./img/avatar_1.jpg",
           activeIndex: null,
+          newInput: "",
           messages: [
             {
               date: "10/01/2020 15:30:55",
@@ -188,6 +189,31 @@ createApp({
       // console.log(lastLog);
       // console.log(lastLog.slice(10, 16));
       return `${lastLog.slice(0, 10)} alle ${lastLog.slice(10, 16)}`;
+    },
+    addMessage() {
+      let now = new Date();
+      let options = {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        hour12: false,
+        timeZone: "Europe/ROme",
+      };
+      let nowFormatted = new Intl.DateTimeFormat("it-IT", options).format(now);
+      let newNowFormatted =
+        nowFormatted.substring(0, 9) + nowFormatted.substring(10, 16);
+      console.log(newNowFormatted);
+      let newMsgObj = {
+        date: newNowFormatted,
+        message: this.newInput,
+        status: "sent",
+      };
+      console.log(newMsgObj.date);
+      this.contacts[this.activeIndex].messages.push(newMsgObj);
+      this.newInput = "";
     },
   },
   computed: {

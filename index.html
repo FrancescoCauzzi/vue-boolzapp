@@ -147,7 +147,7 @@
                   <div class="__msg-displayer p-3 fw-medium">
                     {{el.message}}
                     <div class="__time-displayer fw-medium">
-                      <span>{{el.date.slice(10,16)}}</span>
+                      <span>{{el.date.slice(0,16)}}</span>
 
                     </div>
                   </div>
@@ -160,7 +160,7 @@
                 </div>
                 <div class="__user-input p-2 w-75">
                   <input class="form-control" type="text" placeholder="Inserisci un messaggio"
-                    aria-label="default input example">
+                    aria-label="default input example" v-model="newInput" @keyup.enter="addMessage()">
 
 
                 </div>
