@@ -10,13 +10,14 @@ createApp({
         avatar: "./img/avatar_io.jpg",
       },
       activeIndex: 0,
+      newInput: "",
+      newSearch: "",
 
       contacts: [
         {
           name: "Michele",
           avatar: "./img/avatar_1.jpg",
-          activeIndex: null,
-          newInput: "",
+          visible: true,
           messages: [
             {
               date: "10/01/2020 15:30:55",

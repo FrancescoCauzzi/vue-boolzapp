@@ -36,14 +36,15 @@
 }
 
 .__user-and-contacts {
-  height: 100%;
   background-color: #ffffff;
   width: 30%;
+  height: 100%;
 }
 
 .__receiver-and-chat {
   background-color: blue;
   width: 70%;
+  height: 100%;
 }
 
 .__user,
@@ -107,7 +108,8 @@
 }
 
 .active-item {
-  height: 100%;
+  height: 80px;
+  overflow: auto;
 }
 
 .__last-access {
@@ -118,9 +120,11 @@
 /* stilizzo la chat */
 
 .__actual-chat {
+  /* max-height: inherit; */
   background-image: url(../img/mine.jpg);
-  height: calc(100% - (80px + 52px));
-  overflow: auto;
+  height: 492px;
+  /* height: calc(100% - 132px); */
+  overflow-y: scroll;
 }
 
 .__msg-displayer {
@@ -133,6 +137,11 @@
 }
 
 /* box di visualizzazione messaggi */
+
+.active-item {
+  height: 100%;
+}
+
 .__received .__msg-displayer,
 .__sent .__msg-displayer {
   border-radius: 15px;

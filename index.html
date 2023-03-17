@@ -77,7 +77,7 @@
               <span class="input-group-text" id="addon-wrapping"><i
                   class="fa-solid fa-magnifying-glass __icon"></i></span>
               <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca"
-                aria-describedby="addon-wrapping">
+                aria-describedby="addon-wrapping" v-model="newSearch">
             </div>
             <!-- contacts -->
             <div class="__contacts">
@@ -140,34 +140,36 @@
 
                 </div>
               </div>
-              <div class="__actual-chat  px-5 py-3 d-flex flex-column gap-3">
 
-                <div v-for="(el,index) in contacts[activeIndex].messages" class="__msg-holder"
-                  :class="el.status === 'sent' ? '__sent' : '__received'">
-                  <div class="__msg-displayer p-3 fw-medium">
-                    {{el.message}}
-                    <div class="__time-displayer fw-medium">
-                      <span>{{el.date.slice(0,16)}}</span>
 
-                    </div>
+
+            </div>
+            <div class="__actual-chat  px-5 py-3 d-flex flex-column gap-3">
+
+              <div v-for="(el,index) in contacts[activeIndex].messages" class="__msg-holder"
+                :class="el.status === 'sent' ? '__sent' : '__received'">
+                <div class="__msg-displayer p-3 fw-medium">
+                  {{el.message}}
+                  <div class="__time-displayer fw-medium">
+                    <span>{{el.date.slice(0,16)}}</span>
+
                   </div>
                 </div>
               </div>
-              <div class="__input-text-user-container d-flex justify-content-between ">
-                <div class="__emojis">
-                  <span><i class="fa-solid fa-face-smile-wink"></i></span>
+            </div>
+            <div class="__input-text-user-container d-flex justify-content-between ">
+              <div class="__emojis">
+                <span><i class="fa-solid fa-face-smile-wink"></i></span>
 
-                </div>
-                <div class="__user-input p-2 w-75">
-                  <input class="form-control" type="text" placeholder="Inserisci un messaggio"
-                    aria-label="default input example" v-model="newInput" @keyup.enter="addMessage()">
+              </div>
+              <div class="__user-input p-2 w-75">
+                <input class="form-control" type="text" placeholder="Inserisci un messaggio"
+                  aria-label="default input example" v-model="newInput" @keyup.enter="addMessage()">
 
 
-                </div>
-                <div class="__record-audio">
-                  <span><i class="fa-solid fa-microphone"></i></span>
-
-                </div>
+              </div>
+              <div class="__record-audio">
+                <span><i class="fa-solid fa-microphone"></i></span>
 
               </div>
 
