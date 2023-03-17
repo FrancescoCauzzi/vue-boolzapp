@@ -229,6 +229,11 @@ createApp({
       //console.log(newMsgObj.date);
       this.contacts[this.activeIndex].messages.push(newMsgObj);
       this.newInput = "";
+
+      this.$nextTick(() => {
+        this.$refs.fatherDiv.scrollTop = this.$refs.fatherDiv.scrollHeight;
+      });
+
       // salvo il valore della keyword 'this' nella variabile che ho nominato 'self' per accedervi all'interno della 'closure'
       const self = this;
       setTimeout(function () {
@@ -240,6 +245,10 @@ createApp({
         };
         //console.log(self.contacts);
         self.contacts[self.activeIndex].messages.push(answer);
+        // Scroll to the bottom
+        self.$nextTick(() => {
+          self.$refs.fatherDiv.scrollTop = self.$refs.fatherDiv.scrollHeight;
+        });
       }, 1000);
     },
   },
