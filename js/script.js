@@ -11,7 +11,7 @@ createApp({
       },
       activeIndex: 0,
       newInput: "",
-      newSearch: "",
+      searchInput: "",
 
       contacts: [
         {
@@ -191,6 +191,20 @@ createApp({
       // console.log(lastLog.slice(10, 16));
       return `${lastLog.slice(0, 10)} alle ${lastLog.slice(10, 16)}`;
     },
+    searchUser() {
+      this.contacts.forEach((item) => {
+        console.log(item);
+        if (
+          item.name.toLowerCase().startsWith(this.searchInput.toLowerCase())
+        ) {
+          item.visible = true;
+        } else {
+          item.visible = false;
+        }
+      });
+      this.searchInput = "";
+    },
+
     addMessage() {
       let now = new Date();
       let options = {
@@ -233,17 +247,5 @@ createApp({
     activeItem() {
       return this.contacts[this.activeIndex];
     },
-    // filteredSentItems() {
-    //   // Filter the itemList based on some condition
-    //   return this.contacts[this.activeIndex].messages.filter(
-    //     (item) => item.status === "sent"
-    //   );
-    // },
-    // filteredReceivedItems() {
-    //   // Filter the itemList based on some condition
-    //   return this.contacts[this.activeIndex].messages.filter(
-    //     (item) => item.status === "received"
-    //   );
-    // },
   },
 }).mount("#app");

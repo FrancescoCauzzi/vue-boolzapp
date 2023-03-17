@@ -124,7 +124,7 @@
   background-image: url(../img/mine.jpg);
   height: 492px;
   /* height: calc(100% - 132px); */
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .__msg-displayer {

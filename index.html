@@ -77,23 +77,30 @@
               <span class="input-group-text" id="addon-wrapping"><i
                   class="fa-solid fa-magnifying-glass __icon"></i></span>
               <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca"
-                aria-describedby="addon-wrapping" v-model="newSearch">
+                aria-describedby="addon-wrapping" v-model="searchInput" @keyup.enter="searchUser()">
             </div>
             <!-- contacts -->
             <div class="__contacts">
               <!-- assegno la classe '__active' in base ad una condizione, activeIndex è settato di default = null, successivamente al click ad activeIndex viene assegnato il valore di 'index' che esce dal v-for vueJS method  -->
-              <div v-for="(contact, index) in contacts" class="__contact d-flex d-flex align-items-center gap-2 p-2"
-                :class="{ '__active': activeIndex === index }" @click="toggleClass(index)">
-                <div class="__contact-image">
-                  <img :src="contact.avatar" alt="">
+              <div v-for="(contact, index) in contacts" v-show="contact.visible" class="__contact-container">
+                <div class="__contact d-flex d-flex align-items-center gap-2 p-2"
+                  :class="{ '__active': activeIndex === index }" @click="toggleClass(index)">
 
-                </div>
-                <div class="__contact-name ">
 
-                  <span class="fw-medium fs-5"> {{contact.name}}</span>
-                  <br>
-                  <span class="fw-medium __last-msg ">Ultimo messaggio inviato</span>
 
+
+                  <!-- contact image -->
+                  <div class="__contact-image">
+                    <img :src="contact.avatar" alt="">
+
+                  </div>
+                  <div class="__contact-name ">
+
+                    <span class="fw-medium fs-5"> {{contact.name}}</span>
+                    <br>
+                    <span class="fw-medium __last-msg ">Ultimo messaggio inviato</span>
+
+                  </div>
                 </div>
 
 
