@@ -158,9 +158,11 @@
   justify-content: end;
 }
 
+/* box di visualizzazione messaggi */
 .__received .__msg-displayer,
 .__sent .__msg-displayer {
   border-radius: 15px;
+  position: relative;
 }
 
 .__received .__msg-displayer {
@@ -170,3 +172,22 @@
 .__sent .__msg-displayer {
   background-color: #d5f9ba;
 }
+
+/* .__msg-holder {
+  position: relative;
+} */
+
+.__sent .__msg-displayer .__time-displayer {
+  position: absolute;
+  font-size: 0.7em;
+  right: 3%;
+  bottom: 3%;
+}
+
+.__received .__msg-displayer .__time-displayer {
+  position: absolute;
+  font-size: 0.7em;
+  right: 3%;
+  bottom: 3%;
+}
+/* box di visualizzazione messaggi */

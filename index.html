@@ -144,14 +144,18 @@
 
                 </div>
               </div>
-              <div class="__actual-chat  p-4 d-flex flex-column gap-3">
+              <div class="__actual-chat  px-5 py-3 d-flex flex-column gap-3">
 
                 <div v-for="(el,index) in contacts[activeIndex].messages" class="__msg-holder"
                   :class="el.status === 'sent' ? '__sent' : '__received'">
                   <div class="__msg-displayer p-3">
                     {{el.message}}
+                    <div class="__time-displayer">
+                      <span>{{el.date.slice(10,16)}}</span>
 
+                    </div>
                   </div>
+
 
 
                 </div>
