@@ -119,37 +119,11 @@
 
 .__actual-chat {
   background-image: url(../img/mine.jpg);
-  height: calc(100% - 80px);
+  height: calc(100% - (80px + 52px));
   overflow: auto;
 }
 
-/* .__send-msg {
-  width: 100%;
-}
-
-.__receive-msg {
-  width: 100%;
-} */
-
-/* .__msg-sent-displayer {
-  background-color: #8edafc;
-}
-
-.__msg-rc-displayer {
-  background-color: red;
-}
-
-.__msg-sent-displayer,
-.__msg-rc-displayer {
-  width: 42%;
-  border-radius: 15px;
-} */
-
-.__msg-holder {
-}
-
 .__msg-displayer {
-  background-color: red;
   width: 40%;
 }
 
@@ -163,6 +137,7 @@
 .__sent .__msg-displayer {
   border-radius: 15px;
   position: relative;
+  color: rgb(91, 91, 91);
 }
 
 .__received .__msg-displayer {
@@ -177,17 +152,33 @@
   position: relative;
 } */
 
-.__sent .__msg-displayer .__time-displayer {
-  position: absolute;
-  font-size: 0.7em;
-  right: 3%;
-  bottom: 3%;
-}
-
+.__sent .__msg-displayer .__time-displayer,
 .__received .__msg-displayer .__time-displayer {
   position: absolute;
   font-size: 0.7em;
   right: 3%;
   bottom: 3%;
+  color: rgb(166, 166, 166);
 }
+
 /* box di visualizzazione messaggi */
+
+/* input chat utente */
+.__input-text-user-container {
+  width: 100%;
+  background-color: #eaeaea;
+  height: 52px;
+}
+
+.__emojis,
+.__record-audio {
+  width: 10%;
+  color: rgb(91, 91, 91);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* input chat utente */

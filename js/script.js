@@ -180,6 +180,15 @@ createApp({
     toggleClass(myIndex) {
       this.activeIndex = myIndex;
     },
+    lastReceivedMessage(element) {
+      let newArr = element.messages.filter(
+        (item) => item.status === "received"
+      );
+      let lastLog = newArr[newArr.length - 1].date;
+      // console.log(lastLog);
+      // console.log(lastLog.slice(10, 16));
+      return `${lastLog.slice(0, 10)} alle ${lastLog.slice(10, 16)}`;
+    },
   },
   computed: {
     activeItem() {

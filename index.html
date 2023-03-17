@@ -123,11 +123,7 @@
                   <div class="__username fw-medium fs-5">
                     <span>{{activeItem.name}}</span>
                     <br>
-                    <span class="__last-access">Ultimo accesso il giorno
-                      {{activeItem.messages[activeItem.messages.length -
-                      1].date.slice(0,10)}}</span>
-                    <span class="__last-access"> alle {{activeItem.messages[activeItem.messages.length -
-                      1].date.slice(10,16)}}</span>
+                    <span class="__last-access">Ultimo accesso il giorno {{lastReceivedMessage(activeItem)}}</span>
 
                   </div>
                 </div>
@@ -148,24 +144,35 @@
 
                 <div v-for="(el,index) in contacts[activeIndex].messages" class="__msg-holder"
                   :class="el.status === 'sent' ? '__sent' : '__received'">
-                  <div class="__msg-displayer p-3">
+                  <div class="__msg-displayer p-3 fw-medium">
                     {{el.message}}
-                    <div class="__time-displayer">
+                    <div class="__time-displayer fw-medium">
                       <span>{{el.date.slice(10,16)}}</span>
 
                     </div>
                   </div>
+                </div>
+              </div>
+              <div class="__input-text-user-container d-flex justify-content-between ">
+                <div class="__emojis">
+                  <span><i class="fa-solid fa-face-smile-wink"></i></span>
 
+                </div>
+                <div class="__user-input p-2 w-75">
+                  <input class="form-control" type="text" placeholder="Inserisci un messaggio"
+                    aria-label="default input example">
 
 
                 </div>
+                <div class="__record-audio">
+                  <span><i class="fa-solid fa-microphone"></i></span>
 
-
-
-
+                </div>
 
               </div>
+
             </div>
+
 
           </div>
 
