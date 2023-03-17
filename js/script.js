@@ -205,15 +205,27 @@ createApp({
       let nowFormatted = new Intl.DateTimeFormat("it-IT", options).format(now);
       let newNowFormatted =
         nowFormatted.substring(0, 9) + nowFormatted.substring(10, 16);
-      console.log(newNowFormatted);
+      //console.log(newNowFormatted);
       let newMsgObj = {
         date: newNowFormatted,
         message: this.newInput,
         status: "sent",
       };
-      console.log(newMsgObj.date);
+      //console.log(newMsgObj.date);
       this.contacts[this.activeIndex].messages.push(newMsgObj);
       this.newInput = "";
+      // salvo il valore della keyword 'this' nella variabile che ho nominato 'self' per accedervi all'interno della 'closure'
+      const self = this;
+      setTimeout(function () {
+        // codice da eseguire dopo 3 secondi
+        let answer = {
+          date: newNowFormatted,
+          message: "Ok!",
+          status: "received",
+        };
+        //console.log(self.contacts);
+        self.contacts[self.activeIndex].messages.push(answer);
+      }, 1000);
     },
   },
   computed: {
