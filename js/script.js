@@ -206,7 +206,10 @@ createApp({
       if (newArr.length - 1 >= 0) {
         let lastLog = newArr[newArr.length - 1].date;
 
-        return `${lastLog.slice(0, 10)} alle ${lastLog.slice(10, 16)}`;
+        return `Ultimo accesso ${lastLog.slice(0, 10)} alle ${lastLog.slice(
+          10,
+          16
+        )}`;
       }
     },
 

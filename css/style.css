@@ -131,7 +131,7 @@
 }
 
 .__msg-displayer {
-  width: 40%;
+  width: 50%;
 }
 
 .__sent {
@@ -184,7 +184,7 @@
 .__form-select.__sent-fs,
 .__form-select.__received-fs {
   position: absolute;
-  right: 5%;
+  right: 0%;
   top: 5%;
   border: none;
   cursor: pointer;
