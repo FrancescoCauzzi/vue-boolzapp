@@ -186,6 +186,16 @@ createApp({
     toggleClass(myIndex) {
       this.activeIndex = myIndex;
     },
+    showLastMessage(element) {
+      let newArr = element.messages.filter(
+        (item) => item.status === "received"
+      );
+      if (newArr.length - 1 >= 0) {
+        let lastMsg = newArr[newArr.length - 1].message;
+
+        return lastMsg;
+      }
+    },
     displayLastReceivedMessageLog(element) {
       let newArr = element.messages.filter(
         (item) => item.status === "received"
