@@ -240,6 +240,7 @@ createApp({
 
       // salvo il valore della keyword 'this' nella variabile che ho nominato 'self' per accedervi all'interno della 'closure'
       const self = this;
+      let currentActiveIndex = this.activeIndex;
       setTimeout(function () {
         // codice da eseguire dopo 3 secondi
         let answer = {
@@ -248,7 +249,7 @@ createApp({
           status: "received",
         };
         //console.log(self.contacts);
-        self.contacts[self.activeIndex].messages.push(answer);
+        self.contacts[currentActiveIndex].messages.push(answer);
         // Scroll to the bottom
         self.$nextTick(() => {
           self.$refs.fatherDiv.scrollTop = self.$refs.fatherDiv.scrollHeight;
