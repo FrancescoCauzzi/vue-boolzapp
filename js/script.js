@@ -12,6 +12,7 @@ createApp({
       activeIndex: 0,
       newInput: "",
       searchInput: "",
+      selectedOption: null,
 
       contacts: [
         {
@@ -182,14 +183,17 @@ createApp({
     toggleClass(myIndex) {
       this.activeIndex = myIndex;
     },
-    lastReceivedMessage(element) {
+    displayLastReceivedMessageLog(element) {
       let newArr = element.messages.filter(
         (item) => item.status === "received"
       );
-      let lastLog = newArr[newArr.length - 1].date;
-      // console.log(lastLog);
+
       // console.log(lastLog.slice(10, 16));
-      return `${lastLog.slice(0, 10)} alle ${lastLog.slice(10, 16)}`;
+      if (newArr.length - 1 >= 0) {
+        let lastLog = newArr[newArr.length - 1].date;
+        console.log(lastLog);
+        return `${lastLog.slice(0, 10)} alle ${lastLog.slice(10, 16)}`;
+      }
     },
     searchUser() {
       this.contacts.forEach((item) => {
@@ -250,6 +254,14 @@ createApp({
           self.$refs.fatherDiv.scrollTop = self.$refs.fatherDiv.scrollHeight;
         });
       }, 1000);
+    },
+    deleteMessage(index) {
+      console.log(this.selectedOption);
+      if (this.selectedOption == 2) {
+        this.contacts[this.activeIndex].messages.splice(index, 1);
+      }
+      this.selectedOption = null;
+      // this.contacts[this.activeIndex].messages.splice(index, 1);
     },
   },
   computed: {

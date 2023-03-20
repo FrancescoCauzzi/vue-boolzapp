@@ -171,6 +171,32 @@
   color: rgb(166, 166, 166);
 }
 
+.form-select {
+  background-size: 15px 15px;
+}
+
+.__form-select {
+  width: 0%;
+}
+
+.__form-select.__sent-fs,
+.__form-select.__received-fs {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  border: none;
+  cursor: pointer;
+}
+
+.__form-select.__sent-fs {
+  background-color: #d5f9ba;
+}
+
+.__form-select .__option-slc {
+  background-color: #0d0d0d;
+  color: white;
+}
+
 /* box di visualizzazione messaggi */
 
 /* input chat utente */

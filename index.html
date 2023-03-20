@@ -98,7 +98,8 @@
 
                     <span class="fw-medium fs-5"> {{contact.name}}</span>
                     <br>
-                    <span class="fw-medium __last-msg ">Ultimo messaggio inviato</span>
+                    <span class="fw-medium __last-msg ">Ultimo messaggio inviato
+                      {{displayLastReceivedMessageLog(contact)}}</span>
 
                   </div>
                 </div>
@@ -130,7 +131,8 @@
                   <div class="__username fw-medium fs-5">
                     <span>{{activeItem.name}}</span>
                     <br>
-                    <span class="__last-access">Ultimo accesso il giorno {{lastReceivedMessage(activeItem)}}</span>
+                    <span class="__last-access">
+                      Ultimo accesso il giorno {{displayLastReceivedMessageLog(activeItem)}}</span>
 
                   </div>
                 </div>
@@ -155,7 +157,17 @@
 
               <div v-for="(el,index) in contacts[activeIndex].messages" class="__msg-holder"
                 :class="el.status === 'sent' ? '__sent' : '__received'">
+
+
                 <div class="__msg-displayer p-3 fw-medium">
+                  <select id="select" v-model="selectedOption" class="form-select __form-select"
+                    :class="el.status === 'sent' ? '__sent-fs' : '__received-fs'" aria-label="Default select example"
+                    @click="deleteMessage(index)">
+
+                    <option selcted class="__option-slc" value="1">Message info</option>
+                    <option class="__option-slc" value="2">Delete message</option>
+
+                  </select>
                   {{el.message}}
                   <div class="__time-displayer fw-medium">
                     <span>{{el.date.slice(0,16)}}</span>
