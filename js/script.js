@@ -224,12 +224,20 @@ createApp({
         minute: "numeric",
         second: "numeric",
         hour12: false,
-        timeZone: "Europe/ROme",
+        timeZone: "Europe/Rome",
       };
       let nowFormatted = new Intl.DateTimeFormat("it-IT", options).format(now);
       let newNowFormatted =
         nowFormatted.substring(0, 9) + nowFormatted.substring(10, 16);
       //console.log(newNowFormatted);
+      if (
+        this.newInput === "" ||
+        this.newInput === null ||
+        this.newInput === undefined ||
+        this.newInput.trim() === ""
+      ) {
+        return;
+      }
       let newMsgObj = {
         date: newNowFormatted,
         message: this.newInput,
