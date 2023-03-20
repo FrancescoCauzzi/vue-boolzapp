@@ -206,7 +206,7 @@ createApp({
       if (newArr.length - 1 >= 0) {
         let lastLog = newArr[newArr.length - 1].date;
 
-        return `Ultimo accesso ${lastLog.slice(0, 10)} alle ${lastLog.slice(
+        return `Ultimo accesso il ${lastLog.slice(0, 10)} alle ${lastLog.slice(
           10,
           16
         )}`;
@@ -263,6 +263,8 @@ createApp({
       this.$nextTick(() => {
         this.$refs.fatherDiv.scrollTop = this.$refs.fatherDiv.scrollHeight;
       });
+      let lastAccessEl = document.querySelector(".__last-access");
+      lastAccessEl.innerHTML = "Sta scrivendo...";
 
       // salvo il valore della keyword 'this' nella variabile che ho nominato 'self' per accedervi all'interno della 'closure'
       const self = this;
@@ -280,7 +282,16 @@ createApp({
         self.$nextTick(() => {
           self.$refs.fatherDiv.scrollTop = self.$refs.fatherDiv.scrollHeight;
         });
-      }, 1000);
+        setTimeout(function () {
+          console.log("nested timeout");
+          lastAccessEl.innerHTML = "Online";
+          setTimeout(function () {
+            lastAccessEl.innerHTML = self.displayLastReceivedMessageLog(
+              self.contacts[currentActiveIndex]
+            );
+          }, 2000);
+        }, 0);
+      }, 2000);
     },
     deleteMessage(index) {
       //console.log(this.selectedOption);
