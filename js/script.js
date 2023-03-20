@@ -282,5 +282,8 @@ createApp({
     activeItem() {
       return this.contacts[this.activeIndex];
     },
+    icon() {
+      return this.newInput ? "fa-solid fa-paper-plane" : "fas fa-microphone";
+    },
   },
 }).mount("#app");
