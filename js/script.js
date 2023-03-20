@@ -283,7 +283,7 @@ createApp({
           self.$refs.fatherDiv.scrollTop = self.$refs.fatherDiv.scrollHeight;
         });
         setTimeout(function () {
-          console.log("nested timeout");
+          //console.log("nested timeout");
           lastAccessEl.innerHTML = "Online";
           setTimeout(function () {
             lastAccessEl.innerHTML = self.displayLastReceivedMessageLog(
