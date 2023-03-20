@@ -9,19 +9,36 @@
   color: grey;
 }
 
-/* body {
+.__container-outer {
   height: 100vh;
+  padding-left: 0;
+
+  position: relative;
 }
 
-#app {
+.__background {
   height: 100%;
-} */
+  width: 100%;
+  position: absolute;
+}
 
-.__container-outer {
-  background-color: #26436f;
-  height: 100vh;
+.__green-div {
+  height: 155px;
+  width: 100%;
+  background-color: #009688;
+}
+
+.__fantasy-div {
+  height: calc(100% - 155px);
+  width: 100%;
+
+  background-color: #d8dbd5;
+}
+
+main {
   padding-top: 100px;
-  padding-bottom: 100px;
+  position: absolute;
+  width: 100%;
 }
 
 .container {
@@ -42,7 +59,6 @@
 }
 
 .__receiver-and-chat {
-  background-color: blue;
   width: 70%;
   height: 100%;
 }
