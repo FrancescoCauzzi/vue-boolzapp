@@ -176,10 +176,6 @@ main {
   background-color: #d5f9ba;
 }
 
-/* .__msg-holder {
-  position: relative;
-} */
-
 .__sent .__msg-displayer .__time-displayer,
 .__received .__msg-displayer .__time-displayer {
   position: absolute;
@@ -191,9 +187,6 @@ main {
 
 .form-select {
   background-size: 15px 15px;
-}
-
-.__form-select {
   width: 0%;
 }
 
@@ -207,7 +200,11 @@ main {
 }
 
 .__form-select.__sent-fs {
-  background-color: #d5f9ba;
+  background-color: transparent;
+}
+
+.__form-select.__received-fs {
+  background-color: transparent;
 }
 
 .__form-select .__option-slc {

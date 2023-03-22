@@ -206,10 +206,11 @@ createApp({
       if (newArr.length - 1 >= 0) {
         let lastLog = newArr[newArr.length - 1].date;
 
-        return `Ultimo accesso il ${lastLog.slice(0, 10)} alle ${lastLog.slice(
-          10,
-          16
-        )}`;
+        let myStr = `Ultimo accesso il ${lastLog.slice(
+          0,
+          10
+        )} alle ${lastLog.slice(10, 16)}`;
+        return myStr;
       }
     },
 
@@ -293,10 +294,10 @@ createApp({
         }, 0);
       }, 2000);
     },
-    deleteMessage(index) {
+    deleteMessage(msgIndex) {
       //console.log(this.selectedOption);
       if (this.selectedOption == 2) {
-        this.contacts[this.activeIndex].messages.splice(index, 1);
+        this.contacts[this.activeIndex].messages.splice(msgIndex, 1);
       }
       this.selectedOption = null;
       // this.contacts[this.activeIndex].messages.splice(index, 1);
